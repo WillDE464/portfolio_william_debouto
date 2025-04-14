@@ -130,6 +130,21 @@ div.texte-avec-ligne-verticale{
     height: 75px;
     display: inline-block;
 }
+
+div.texte-avec-ligne-verticale_1{
+    border-left: 4px solid var(--color1);
+    padding-left: 8px;
+    height: 75px;
+    display: inline-block;
+}
+
+div.texte-avec-ligne-verticale_2{
+    border-left: 4px solid var(--color1);
+    padding-left: 8px;
+    height: 75px;
+    display: inline-block;
+}
+
 div.texte-avec-ligne-verticale p{
     margin-top: 0;
 }
@@ -348,6 +363,10 @@ transform: translate(-50%, -50%) scale(1.2);
 opacity: 1;
 }
 
+.mod_taille_im {
+width: 100%;        
+}
+
 
 
 
@@ -393,7 +412,9 @@ opacity: 1;
     }
     .col-portfolio2 {
         width: 100%;
-      }
+    }
+
+    
     div.frame{
         margin: 0px 0px;
         padding: 0px 0px;
@@ -404,6 +425,7 @@ opacity: 1;
     }
     .portfolio-row {
         flex-direction: column;
+        gap: 50px;
     }
    
     /*Villa 1*/
@@ -434,17 +456,49 @@ opacity: 1;
         display: block;
     }
     .carousel-item {
-        width: 85%;
-    }    
+        width: 100%;
+        flex: 0 0 100%;
+    }
+    
     .realisation-container {
         flex-direction: column;
     }
 
-    .realisation-medias img {
-        width: 100%;
-    }
-
+   
     .realisation-description {
+        width: 100%;
         margin-top: 20px;
+        order: 2;
     }
+    .realisation-scroll-wrapper {
+        width: 100%;
+        order: 1;
+    }
+    
+    
+
+    .mod_taille_im {
+        width: 70%;            /* rend l'image plus petite sur mobile */
+        display: block;
+        margin: 0 auto 15px auto;  /* centre l’image horizontalement et ajoute un petit espace en bas */
+    }
+    
+    div.texte-avec-ligne-verticale_1{
+        height: 124px;
+    }
+    
+    div.texte-avec-ligne-verticale_2 {
+        height: 30px;
+        display: flex;
+        align-items: center;
+    }
+    .realisation-description p {
+    font-size: 14px; /* ou une taille un peu plus petite si besoin */
+    margin: 0;
+}
+
+    
+
+
+    
 }
