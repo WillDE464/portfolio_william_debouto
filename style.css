@@ -428,10 +428,15 @@ width: 100%;
 }
 
 .navbar-toggle {
-  display: none;
-  font-size: 26px;
-  cursor: pointer;
-}
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
 
 
 .scroll-offset {
