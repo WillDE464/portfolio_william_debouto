@@ -12,23 +12,34 @@
    
         
     <body>
+        <!-- MENU NAVIGATION -->
+        <nav class="navbar">
+            <div class="navbar-logo"></div>
+            <div class="navbar-toggle" id="mobile-menu">&#9776;</div>
+            <ul class="navbar-links" id="navbar-links">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#realisations">Réalisations</a></li>
+            <li><a href="#parcours">Parcours</a></li>
+            <li><a href="mailto:william.debouto@alumnos.upm.es">Contact</a></li>
+
+            </ul>
+        </nav>
+        
         <!-- COUVERTURE -->
-        <div class = "cover">
+        
+        <div class = "cover" id="accueil">
             <img class ="cover-profile" src="profile_w2.png">
             <h1>William DEBOUTO</h1>
             <p style="color: white; font-size: 20px;">Ingénieur Génie Civil</p>
             <div style="text-align: center;">
                 <a class="contact-button" href="mailto:william.debouto@alumnos.upm.es">ME CONTACTER</a>
             </div>
-            <div class="cover-contact">
-                <p><a href="mailto:william.debouto@alumnos.upm.es"><b>william.debouto@alumnos.upm.es</b></a></p>
-                <p><a href="tel:+33764248761"><b>+33 7 64 24 87 61</b></a></p>
-            </div>
-            <br>
+            
         </div>
 
         <!-- SECTION GRISE 1 -->
-        <div class=" section section-grise1">
+        <div class=" section section-grise1" >
             <div class="separateur"></div>
             <p>Je vous accompagne dans la <b>modélisation</b> et l’<b>automatisation</b>
                 de vos projets BTP en méthodologie <b>BIM.</b>
@@ -36,7 +47,8 @@
         </div>
 
         <!-- SECTION BLANCHE 1 -->
-        <div class="section">
+        <div id="services" class="scroll-offset"></div>
+        <div class="section" id="services">
             <h2>Services proposés</h2>
             <div class="portfolio-row">
               
@@ -51,7 +63,7 @@
                 </div>
               </div>
           
-              <div class="col-portfolio2">
+              <div class="col-portfolio2" >
                 <img class="mod_taille_im" src="g666.jpg">
                 <div class="texte-avec-ligne-verticale service-text">
                   <p class="justifie">
@@ -76,35 +88,47 @@
           
             </div>
         </div>
-        
-        <div class="section section-grise2">
+
+
+
+        <div id="realisations" class="scroll-offset"></div>
+        <div class="section section-grise2" id="realisations">
             <h2>Réalisations</h2>
             <div class="carousel-container">
                 <div class="carousel-track" id="carousel">
                     <div class="carousel-item">
-                        <a href="index_architecture.html"><img src="project22.jpg" alt="architecture"></a>
+                        <a href="index_architecture.html" class="clickable-image">
+                            <img src="project22.jpg" alt="architecture">
+                            <div class="image-caption">Voir le projet</div>
+                        </a>
+                        
                     </div>
                     
                     <div class="carousel-item">
-                        <a href="index_structure.html"><img src="structu1.png" alt="structure"></a>
+                        <a href="index_structure.html" class="clickable-image">
+                            <img src="structu1.png" alt="structure">
+                            <div class="image-caption">Voir le projet</div>
+                        </a>
+                        
                     </div>
 
                     <div class="carousel-item">
-                        <a href="index_architecture_2.html"><img src="project33.jpg" alt="architecture 2"></a>
+                        <a href="index_architecture_2.html" class="clickable-image">
+                            <img src="project33.jpg" alt="architecture 2">
+                            <div class="image-caption">Voir le projet</div>
+                        </a>
+                        
                     </div>
                 </div>
             </div>
         </div>
         
         
-        
-        
-            
-            
-                
-        </div>
+      
+       
         <!-- SECTION BLANCHE 2 --> 
-        <div class="section">
+        <div id="parcours" class="scroll-offset"></div>
+        <div class="section" style="padding-bottom: 0px;" id="parcours">
             <h2>Parcours et compétences</h2>
             <div class="section portfolio-row" style="gap: 40px;">
                 <div class="col-contenu">
@@ -122,7 +146,7 @@
                         </ul>
             
                         <p class="justifie">
-                            Après l’obtention de mon diplôme d’ingénieur en 2022, j’ai décidé de me spécialiser dans la <b>gestion de projets BTP en méthodologie BIM (Building Information Modeling)</b>.
+                            Après l’obtention de mon diplôme d’ingénieur en 2022, je me suis spécialisé dans la <b>gestion de projets BTP en méthodologie BIM (Building Information Modeling)</b>.
                             J’ai ainsi suivi une <b>formation de 130 heures</b>, me permettant d’acquérir :
                         </p>
                         <ul>
@@ -169,11 +193,28 @@
 
 
         <!-- SECTION BLANCHE -->
-  
-           <iframe src="contact-frame.html" scrolling ="no">
+           <iframe src="contact-frame.html" scrolling ="no" id="contact">
             
            </iframe>
-      
+
+
+           <script>
+            const menuToggle = document.getElementById("mobile-menu");
+            const navLinks = document.getElementById("navbar-links");
+            
+            menuToggle.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+            });
+            
+            // 👇 Ferme le menu après clic sur un lien (sur mobile)
+            document.querySelectorAll('.navbar-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+            </script>
+            
+        
 
     </body>
 

@@ -1,3 +1,4 @@
+
 *{
     box-sizing: border-box;
 }
@@ -367,7 +368,84 @@ opacity: 1;
 width: 100%;        
 }
 
+/* Rendu d’un overlay “Voir le projet” en bas centré de l’image */
+.clickable-image {
+    position: relative;
+    display: block;
+    text-decoration: none;
+  }
+  
+  .image-caption {
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    opacity: 0.9;
+    pointer-events: none; /* pour ne pas gêner le clic */
+    font-weight: bold;
+  }
+  
+  /* MENU DE NAVIGATION */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: white;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+}
 
+.navbar-logo {
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--color1);
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.navbar-links li a:hover {
+  color: var(--color1);
+}
+
+.navbar-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+
+.scroll-offset {
+    position: relative;
+  }
+  
+  .scroll-offset::before {
+    content: "";
+    display: block;
+    height: 65px; /* ajuster selon la hauteur de ton menu */
+    margin-top: -10px;
+    visibility: hidden;
+    pointer-events: none;
+  }
 
 
 
@@ -495,10 +573,42 @@ width: 100%;
     .realisation-description p {
     font-size: 14px; /* ou une taille un peu plus petite si besoin */
     margin: 0;
-}
-
-    
 
 
     
 }
+
+    
+.navbar-links {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+    
+}
+
+
+
+html {
+    scroll-behavior: smooth;
+  }
+
+ 
+ 
+  
+
+  
